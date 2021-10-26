@@ -4,29 +4,29 @@ $message = '';
 if(isset($_GET['status'])) {
     switch ($_GET['status']) {
         case 'success':
-            $message = '<div class="alert alert-success"Action executed!</div>';
+            $message = '<div class="alert alert-success">Action executed!</div>';
             break;
 
         case 'error':
-            $message = '<div class="alert alert-danger"Something went wrong</div>';
+            $message = '<div class="alert alert-danger">Something went wrong</div>';
             break;
     }
 }
 
 $results = '';
 
-foreach($jobs as $jobs) {
+foreach($jobs as $job) {
     $results .= '<tr>
-                   <td>'.$jobs->id.'</td>
-                   <td>'.$jobs->title.'</td>
-                   <td>'.$jobs->description.'</td>
-                   <td>'.($jobs->active == 'n' ? 'Inactive' : 'Active').'</td>
-                   <td>'.date('m/d/y H:i:s',strtotime($jobs->date)).'</td>
+                   <td>'.$job->id.'</td>
+                   <td>'.$job->title.'</td>
+                   <td>'.$job->description.'</td>
+                   <td>'.($job->active == 'n' ? 'Inactive' : 'Active').'</td>
+                   <td>'.date('m/d/y H:i:s',strtotime($job->date)).'</td>
                    <td>
-                     <a href="edit.php?id='.$jobs->id.'">
+                     <a href="edit.php?id='.$job->id.'">
                      <button type="button" class="btn btn-primary">Edit</button>
                      </a>
-                     <a href="delete.php?id='.$jobs->id.'">
+                     <a href="delete.php?id='.$job->id.'">
                      <button type="button" class="btn btn-danger">Delete</button>
                      </a>
                    </td>

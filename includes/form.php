@@ -9,7 +9,7 @@
     <form method="post">
         <div class="form-group">
             <label>Title</label>
-            <input type="text" class="form-control" name="title">
+            <input type="text" class="form-control" name="title" value="<?=newJob->title?>">
         </div>
 
         <div class="form-group">
