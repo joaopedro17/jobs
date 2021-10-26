@@ -9,12 +9,12 @@
     <form method="post">
         <div class="form-group">
             <label>Title</label>
-            <input type="text" class="form-control" name="title" value="<?=newJob->title?>">
+            <input type="text" class="form-control" name="title" value="<?=$newJob->title?>">
         </div>
 
         <div class="form-group">
             <label>Description</label>
-            <textarea class="form-control" name="description" rows="5"></textarea>
+            <textarea class="form-control" name="description" rows="5"><?=$newJob->description?></textarea>
         </div>
 
         <div class="form-group">
@@ -28,7 +28,7 @@
 
                 <div class="form-check form-check-inline">
                     <label class="form-control">
-                        <input type="radio" name="active" value="n">Inactive
+                        <input type="radio" name="active" value="n" <?=$newJob->title == 'n' ? 'checked' : ''?>>Inactive
                     </label>
                 </div>
             </div>
